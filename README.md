@@ -4,6 +4,7 @@
  Main PDF answers for Technical Test Data Governance Position can be accessed here [[(Click Here)](https://drive.google.com/file/d/1ClDn7eEbe-JhKYcXz173SGqZDWhD-B62/view?usp=sharing)]
 
  Question 1
+ <br />
  1.1. Table design in dbdiagram.io format can be accessed here [[(Click Here)](https://dbdiagram.io/d/6222f9ee54f9ad109a62de7b)]
       The reasoning and notes for this diagram can be read on Main PDF Answers Above (Page 1-2)
 
@@ -13,6 +14,7 @@
       The reasoning and notes for this diagram can be read on Main PDF Answers Above (Page 2-3)
 
 Question 2
+<br />
  2.1. User Requirements and Data Requirements can be read on Main PDF Answers Above (Page 3-5)
 
  2.2. Schemes based on User Requirement and Data Requirement has been divided into 3 parts.
