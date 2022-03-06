@@ -1,20 +1,26 @@
+-- Connecting to main database
 USE d_gov_technical_test;
+
+-- Creating Table Products
 CREATE TABLE products (
   `id` int PRIMARY KEY,
   `name` varchar(40) CHARACTER SET utf8
 );
 
+-- Creating Table Customers
 CREATE TABLE customers (
   `id` int PRIMARY KEY,
   `name` varchar(40) CHARACTER SET utf8
 );
 
+-- Creating Table Orders
 CREATE TABLE orders (
   `order_number` varchar(40) CHARACTER SET utf8 PRIMARY KEY,
   `customer_id` int,
   `date` date
 );
 
+-- Creating Table Order_Lines
 CREATE TABLE order_lines (
   `order_line_number` varchar(40) CHARACTER SET utf8 PRIMARY KEY,
   `order_number` varchar(40) CHARACTER SET utf8,
@@ -23,34 +29,44 @@ CREATE TABLE order_lines (
   `usd_amount` decimal
 );
 
+-- Creating Table Invoices
 CREATE TABLE invoices (
   `invoice_number` varchar(40) CHARACTER SET utf8 PRIMARY KEY,
   `order_number` varchar(40) CHARACTER SET utf8,
   `date` date
 );
 
+-- Creating Table Payments
 CREATE TABLE payments (
   `payment_number` varchar(40) CHARACTER SET utf8 PRIMARY KEY,
   `invoice_number` varchar(40) CHARACTER SET utf8,
   `date` date
 );
 
+-- Adding Foreign Key in Table Orders for customer_id with references from table customers id
 ALTER TABLE orders ADD FOREIGN KEY (customer_id) REFERENCES customers(id);
 
+-- Adding Foreign Key in Table Order_Lines for order_number with references from table orders order_number
 ALTER TABLE order_lines ADD FOREIGN KEY (order_number) REFERENCES orders (order_number);
 
+-- Adding Foreign Key in Table Order_Lines for product_id with references from table products id
 ALTER TABLE order_lines ADD FOREIGN KEY (product_id) REFERENCES products (id);
 
+-- Adding Foreign Key in Table invoices for order_number with references from table orders order_number
 ALTER TABLE invoices ADD FOREIGN KEY (order_number) REFERENCES orders (order_number);
 
+-- Adding Foreign Key in Table payments for invoice_number with references from table invoices invoice_number
 ALTER TABLE payments ADD FOREIGN KEY (invoice_number) REFERENCES invoices (invoice_number);
 
+-- Inserting data into Table Products
 INSERT INTO 
       products 
 VALUES
       (477, 'Laptop X'),
       (478, 'Phone Y'),
       (479, 'Tablet Z');
+
+-- Inserting data into Table customers
 INSERT INTO 
       customers 
 VALUES 
@@ -58,6 +74,7 @@ VALUES
       (3924, 'Budi'),
       (3925, 'Caca');
 
+-- Inserting data into Table orders
 INSERT INTO 
       orders 
 VALUES 
@@ -72,6 +89,7 @@ VALUES
       ('ORD-134', 3924, '2020-12-04'),
       ('ORD-205', 3923, '2021-01-23');
 
+-- Inserting data into Table invoices
 INSERT INTO 
       invoices 
 VALUES 
@@ -83,6 +101,8 @@ VALUES
       ('INV-581', 'ORD-201', '2020-10-13'),
       ('INV-587', 'ORD-134', '2020-12-13'),
       ('INV-647', 'ORD-205', '2021-02-01');
+
+-- Inserting data into Table payments
 INSERT INTO 
       payments 
 VALUES 
@@ -93,6 +113,7 @@ VALUES
       ('PYM-761', 'INV-587', '2021-01-11'),
       ('PYM-803', 'INV-647', '2021-02-02');
 
+-- Inserting data into Table order_lines
 INSERT INTO 
       order_lines 
 VALUES 
