@@ -23,10 +23,12 @@ Question 2
  <br />
     1. Scheme for Raw Data before processed can be accessed here [[(1.0 Skema Raw Data)](https://dbdiagram.io/d/62235c7d54f9ad109a6480bc)]
 <br />
-    2. Scheme for Grouping Data into Data Order,Customer, and Invoice & Payments can be accessed here
+    2. Scheme for Grouping Data into Data Order,Customer, and Invoice & Payments can be accessed below
+<br />
         [[(2.0 Skema Grouping Data)](https://dbdiagram.io/d/62246a8f54f9ad109a684775)]
 <br />
-    3. Scheme for Master Data after processed and ready to use for analytics can be accessed here 
+    3. Scheme for Master Data after processed and ready to use for analytics can be accessed below
+<br /> 
         [[(3.0 Skema Master Data)](https://dbdiagram.io/d/62246d7c54f9ad109a6854c7)]
 
  2.3. Data Pipeline in a diagram chart can be seen below:
